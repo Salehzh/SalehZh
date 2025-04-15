@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Saleh Alzahrani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      direction: ltr;
+      font-size: 18px;
+    }
+
+    header {
+      width: 100%;
+      padding: 25px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: orange;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .translate-button {
+      background-color: transparent;
+      border: 2px solid orange;
+      padding: 8px 16px;
+      cursor: pointer;
+      color: orange;
+      font-weight: bold;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .contact {
+      padding: 180px 50px 100px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 44px;
+      margin-bottom: 25px;
+    }
+
+    .contact h2 span {
+      color: orange;
+    }
+
+    .contact p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #555;
+      line-height: 1.8;
+      font-size: 20px;
+    }
+
+    .contact a {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info div {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .contact-info div i {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 30px;
+      border: 5px solid orange;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>S</span>aleh.</div>
+    <nav>
+      <a href="index.html" class="home-link">Home</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+      <button class="translate-button" onclick="toggleLanguage()">العربية</button>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <img src="cv random man 3.jpg" alt="Profile Image" class="profile-img" />
+    <h2 class="title">Contact <span>Me.</span></h2>
+    <p class="description">
+      Feel free to reach out to me for any inquiries, collaborations, or just to say hello! You can contact me through the following platforms:
+    </p>
+
+    <div class="contact-info">
+      <div>
+        <i class="fas fa-envelope"></i>
+        <p class="email-label">Email: <a href="mailto:salooooh19t@gmail.com">salooooh19t@gmail.com</a></p>
+      </div>
+      <div>
+        <i class="fas fa-phone"></i>
+        <p class="phone-label">Phone: +966 554583275</p>
+      </div>
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <p class="location-label">Location: Makkah, Saudi Arabia</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let isArabic = false;
+
+    function toggleLanguage() {
+      const button = document.querySelector(".translate-button");
+      const title = document.querySelector(".title");
+      const description = document.querySelector(".description");
+      const homeLink = document.querySelector(".home-link");
+      const contactLink = document.querySelector(".contact-link");
+      const email = document.querySelector(".email-label");
+      const phone = document.querySelector(".phone-label");
+      const location = document.querySelector(".location-label");
+
+      if (!isArabic) {
+        document.documentElement.lang = "ar";
+        document.body.style.direction = "rtl";
+        document.title = "تواصل - صالح الزهراني";
+
+        title.innerHTML = "تواصل <span>معي.</span>";
+        description.innerText = "لا تتردد في التواصل معي لأي استفسار أو تعاون أو حتى إلقاء التحية! يمكنك التواصل معي عبر الوسائل التالية:";
+        homeLink.innerText = "الرئيسية";
+        contactLink.innerText = "تواصل";
+        email.innerHTML = 'البريد الإلكتروني: <a href="mailto:salooooh19t@gmail.com">salooooh19t@gmail.com</a>';
+        phone.innerText = "الجوال: +966 554583275";
+        location.innerText = "الموقع: مكة المكرمة، المملكة العربية السعودية";
+        button.innerText = "English";
+      } else {
+        document.documentElement.lang = "en";
+        document.body.style.direction = "ltr";
+        document.title = "Contact - Saleh Alzahrani";
+
+        title.innerHTML = "Contact <span>Me.</span>";
+        description.innerText = "Feel free to reach out to me for any inquiries, collaborations, or just to say hello! You can contact me through the following platforms:";
+        homeLink.innerText = "Home";
+        contactLink.innerText = "Contact";
+        email.innerHTML = 'Email: <a href="mailto:salooooh19t@gmail.com">salooooh19t@gmail.com</a>';
+        phone.innerText = "Phone: +966 554583275";
+        location.innerText = "Location: Makkah, Saudi Arabia";
+        button.innerText = "العربية";
+      }
+
+      isArabic = !isArabic;
+    }
+  </script>
+</body>
+</html>

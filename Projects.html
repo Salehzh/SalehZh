@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saleh Alzahrani - Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: orange;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .translate-button {
+      background-color: transparent;
+      border: 2px solid orange;
+      padding: 6px 12px;
+      cursor: pointer;
+      color: orange;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .projects-section {
+      padding: 120px 50px 80px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .projects-section h2 {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .projects-section h2 span {
+      color: orange;
+    }
+
+    .projects-section p {
+      font-size: 22px;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 300px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card h3 {
+      margin-top: 15px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: orange;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .projects-section {
+        padding: 60px 20px;
+      }
+
+      .projects-container {
+        gap: 20px;
+      }
+
+      .project-card {
+        width: 90%;
+      }
+    }
+
+    body[lang="ar"] {
+      direction: rtl;
+      text-align: right;
+    }
+  </style>
+</head>
+<body lang="en">
+
+  <header>
+    <div class="logo"><span>S</span>aleh.</div>
+    <nav>
+      <a href="index.html" class="home-link" id="homeLink">Home</a>
+      <a href="contact.html" class="contact-link" id="contactLink">Contact</a>
+      <a href="projects.html" class="projects-link" id="projectsLink">مشاريعي</a>
+      <button class="translate-button" onclick="toggleLanguage()">العربية</button>
+    </nav>
+  </header>
+
+  <section class="projects-section">
+    <h2>My <span>Projects</span></h2>
+    <p>Here are some of the projects I've worked on, showcasing my skills in web development and database management.</p>
+
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <a href="Presentation.pptx" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <a href="project2.html" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <a href="project3.html" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let isArabic = false;
+
+    function toggleLanguage() {
+      const button = document.querySelector(".translate-button");
+      const h2 = document.querySelector(".projects-section h2");
+      const p = document.querySelector(".projects-section p");
+      const projectsLink = document.querySelector(".projects-link");
+      const homeLink = document.querySelector(".home-link");
+      const body = document.querySelector("body");
+
+      if (!isArabic) {
+        button.innerText = "English";
+        h2.innerHTML = 'مشاريعي <span>التي عملت عليها</span>';
+        p.innerText = "إليك بعض المشاريع التي عملت عليها، مما يعرض مهاراتي في تطوير الويب وإدارة قواعد البيانات.";
+        projectsLink.innerText = "Projects";
+        homeLink.innerText = "الرئيسية";
+        body.setAttribute("lang", "ar");
+      } else {
+        button.innerText = "العربية";
+        h2.innerHTML = 'My <span>Projects</span>';
+        p.innerText = "Here are some of the projects I've worked on, showcasing my skills in web development and database management.";
+        projectsLink.innerText = "مشاريعي";
+        homeLink.innerText = "Home";
+        body.setAttribute("lang", "en");
+      }
+
+      isArabic = !isArabic;
+    }
+  </script>
+
+</body>
+</html>
