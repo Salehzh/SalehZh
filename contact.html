@@ -128,6 +128,7 @@
     <div class="logo"><span>S</span>aleh.</div>
     <nav>
       <a href="index.html" class="home-link">Home</a>
+      <a href="projects.html" class="projects-link">Projects</a>
       <a href="contact.html" class="contact-link">Contact</a>
       <button class="translate-button" onclick="toggleLanguage()">العربية</button>
     </nav>
@@ -164,6 +165,7 @@
       const title = document.querySelector(".title");
       const description = document.querySelector(".description");
       const homeLink = document.querySelector(".home-link");
+      const projectsLink = document.querySelector(".projects-link");
       const contactLink = document.querySelector(".contact-link");
       const email = document.querySelector(".email-label");
       const phone = document.querySelector(".phone-label");
@@ -177,6 +179,7 @@
         title.innerHTML = "تواصل <span>معي.</span>";
         description.innerText = "لا تتردد في التواصل معي لأي استفسار أو تعاون أو حتى إلقاء التحية! يمكنك التواصل معي عبر الوسائل التالية:";
         homeLink.innerText = "الرئيسية";
+        projectsLink.innerText = "مشاريعي";
         contactLink.innerText = "تواصل";
         email.innerHTML = 'البريد الإلكتروني: <a href="mailto:salooooh19t@gmail.com">salooooh19t@gmail.com</a>';
         phone.innerText = "الجوال: +966 554583275";
@@ -190,6 +193,7 @@
         title.innerHTML = "Contact <span>Me.</span>";
         description.innerText = "Feel free to reach out to me for any inquiries, collaborations, or just to say hello! You can contact me through the following platforms:";
         homeLink.innerText = "Home";
+        projectsLink.innerText = "Projects";
         contactLink.innerText = "Contact";
         email.innerHTML = 'Email: <a href="mailto:salooooh19t@gmail.com">salooooh19t@gmail.com</a>';
         phone.innerText = "Phone: +966 554583275";
